@@ -1,17 +1,16 @@
 pipeline {
-    agent any
+agent any
 
-    tools {
-        maven 'M3'
-    }
+tools {
+    maven 'Maven'
+}
 
-    stages {
-        stage('Build and Test') {
-            steps {
-                dir('05-prime-number') {
-                    bat 'mvn clean test package'
-                }
-            }
+stages {
+    stage('Build and Test') {
+        steps {
+            bat 'mvn clean test package'
         }
     }
+}
+
 }
